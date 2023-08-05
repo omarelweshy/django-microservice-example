@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from authentication.views import TokenValidationView
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("auth/validate", TokenValidationView.as_view(), name="token-validation"),
 ]
